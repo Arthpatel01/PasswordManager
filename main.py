@@ -61,7 +61,6 @@ class PasswordManager:
         timestep = datetime.datetime.now().timestamp()
         with open('enc_files/' + str(timestep) + '.encrypted', 'wb') as enc_file:
             enc_file.write(encrypted_data)
-        "File Encrypted Successfully!"
 
     def decrypt_file(self, secret_key, file_path):
         """
