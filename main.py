@@ -12,6 +12,19 @@ class PasswordManager:
         else:
             self.__key = key
 
+    @staticmethod
+    def exist_or_create_directory(path):
+        """
+        This function will check given directory (path) is available, if not ---> create it.
+        :param path: Directory/Folder path eg. ./temp_folder
+        :return: None
+        """
+        try:
+            if not os.path.exists(os.path.join(os.getcwd(), path)):
+                os.mkdir(os.path.join(os.getcwd(), path))
+        except Exception as e:
+            print('get_or_create_directory Error: ', e)
+
     def new_key(self):
         """
         Generate new secret key for the encryption and decryption of the data.
@@ -59,6 +72,9 @@ class PasswordManager:
 
         # saving in enc_files folder
         timestep = datetime.datetime.now().timestamp()
+
+        # check if folder not exist then create it first
+        self.exist_or_create_directory('./enc_files')
         with open('enc_files/' + str(timestep) + '.encrypted', 'wb') as enc_file:
             enc_file.write(encrypted_data)
 
