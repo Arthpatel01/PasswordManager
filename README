@@ -1,5 +1,22 @@
 # PasswordManager
 
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+PasswordManager is a Python class that provides encryption and decryption capabilities for files using the Fernet encryption scheme from the `cryptography` library.
+
+## Requirements
+
+- Python 3.x
+- `cryptography` library
+
+## Installation
+
+```bash
+pip install cryptography
+
+# PasswordManager
+
 PasswordManager is a Python class that provides encryption and decryption capabilities for files using the Fernet encryption scheme from the `cryptography` library.
 
 ## Requirements
